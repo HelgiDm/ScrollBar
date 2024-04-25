@@ -1,0 +1,91 @@
+body {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+}
+
+.slide {
+    width: 80vw;
+    height: 700px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+}
+
+.slide img {
+    object-fit: contain;
+    width: 25vw;
+}
+
+.centered {
+    /* border: 2px solid blue; */
+    width: 25vw;
+    height: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    overflow: hidden;
+}
+
+
+.btns {
+    /* border: 2px solid green; */
+    width: 25vw;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 980px;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 2%;
+    box-sizing: border-box;
+    align-items: center;
+
+}
+
+.btns button {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font-family: sans-serif;
+    color: white;
+    background-color: #C0C0C0;
+    font-weight: 200;
+    font-size: 40px;
+    cursor: pointer;
+    border: 0;
+    transition: all 0.2s ease-in-out;
+    /* opacity: 0; */
+}
+
+.btns button:hover {
+    transform: scale(1.1);
+}
+
+#scroll-bar {
+    height: 7px;
+    width: 350px;
+    background-color: #c0c0c051;
+    border-radius: 10px;
+    position: relative;
+}
+
+#scroll {
+    height: 7px;
+    width: 35px;
+    background-color: #c0c0c0;
+    border-radius: 10px;
+    position: absolute;
+}
+
+#scroll:hover {
+    cursor:grab;
+    transform: scale(1.5);
+}
