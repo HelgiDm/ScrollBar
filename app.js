@@ -32,17 +32,14 @@ document.addEventListener('mouseup', (event) => {
 
 scroll.addEventListener('mousemove', (event) => {
   if (isDragging & 
-    scroll.style.left.slice(0, scroll.style.left.indexOf('p')) >= 0 &
-    scroll.style.left.slice(0, scroll.style.left.indexOf('p')) <= 315) {
-        if (event.clientX - startX > 0 & event.clientX - startX < 315) {
+    scroll.offsetLeft >= 0 & scroll.offsetLeft <= 315) {
+        if (event.clientX - startX > 0 & event.clientX - startX < 0.85*scrollBar.clientWidth) {
             scroll.style.left = `${event.clientX - startX}px`;
-            if ((event.clientX - startX) <= scroll.style.left.slice(0, scroll.style.left.indexOf('p'))) {
-              slide.style.left = `${(event.clientX - startX) * coef}px`
-            }
-            else {
-              slide.style.right = `${(event.clientX - startX) * coef}px`;
-              slide.style.left = '0px'
-          }
+            while ()
+            slide.style.left = `${-((event.clientX - startX) * coef)}px`;
+            
+
+
         }
     }
 });
