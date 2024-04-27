@@ -2,18 +2,21 @@ body {
     position: relative;
     height: 100vh;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide {
     width: 80vw;
     height: 700px;
-    /* border: 2px solid red; */
+    border: 2px solid red;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
     transition: all 1s;
 }
 
@@ -23,14 +26,16 @@ body {
 }
 
 .centered {
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
     width: 25vw;
     height: 700px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    overflow: hidden;
+    position: relative;
+    /* display: flex;
+    justify-content: center; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%);  */
+    /* overflow: hidden; */
 }
 
 
@@ -41,7 +46,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 980px;
+    top: 87vh;
     display: flex;
     justify-content: space-between;
     padding: 60px 2%;
@@ -71,7 +76,7 @@ body {
 
 #scroll-bar {
     height: 7px;
-    width: 350px;
+    width: 12vw;
     background-color: #c0c0c051;
     border-radius: 10px;
     position: relative;
@@ -79,10 +84,11 @@ body {
 
 #scroll {
     height: 7px;
-    width: 35px;
+    width: 15%;
     background-color: #c0c0c0;
     border-radius: 10px;
     position: absolute;
+
 }
 
 #scroll:hover {

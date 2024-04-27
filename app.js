@@ -3,6 +3,8 @@ let rbtn = document.querySelector('#right');
 let slide = document.querySelector('.slide');
 let scroll = document.querySelector('#scroll');
 let scrollBar = document.querySelector('#scroll-bar');
+// let imgFirst = document.querySelector('#first');
+// let imgLast = document.querySelector('#last');
 
 
 rbtn.addEventListener('click', () => {
@@ -15,6 +17,7 @@ lbtn.addEventListener('click', () => {
 
 let isDragging = false;
 let startX;
+let coef = slide.clientWidth / scrollBar.clientWidth;
 
 scroll.addEventListener('mousedown', (event) => {
   isDragging = true;
@@ -33,8 +36,16 @@ scroll.addEventListener('mousemove', (event) => {
     scroll.style.left.slice(0, scroll.style.left.indexOf('p')) <= 315) {
         if (event.clientX - startX > 0 & event.clientX - startX < 315) {
             scroll.style.left = `${event.clientX - startX}px`;
+            if ((event.clientX - startX) <= scroll.style.left.slice(0, scroll.style.left.indexOf('p'))) {
+              slide.style.left = `${(event.clientX - startX) * coef}px`
+            }
+            else {
+              slide.style.right = `${(event.clientX - startX) * coef}px`;
+              slide.style.left = '0px'
+          }
         }
     }
 });
+
 
 
