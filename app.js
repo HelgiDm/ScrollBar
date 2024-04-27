@@ -3,6 +3,7 @@ let rbtn = document.querySelector('#right');
 let slide = document.querySelector('.slide');
 let scroll = document.querySelector('#scroll');
 let scrollBar = document.querySelector('#scroll-bar');
+let centered = document.querySelector('.centered')
 // let imgFirst = document.querySelector('#first');
 // let imgLast = document.querySelector('#last');
 
@@ -31,12 +32,16 @@ document.addEventListener('mouseup', (event) => {
 });
 
 scroll.addEventListener('mousemove', (event) => {
-  if (isDragging & 
-    scroll.offsetLeft >= 0 & scroll.offsetLeft <= 315) {
+  if (isDragging & scroll.offsetLeft >= 0 & scroll.offsetLeft <= 315) {
         if (event.clientX - startX > 0 & event.clientX - startX < 0.85*scrollBar.clientWidth) {
             scroll.style.left = `${event.clientX - startX}px`;
-            while ()
-            slide.style.left = `${-((event.clientX - startX) * coef)}px`;
+            if (-(event.clientX - startX) * coef <= (slide.clientWidth - centered.clientWidth)) {
+              slide.style.left = `${-((event.clientX - startX) * 0.812 * coef)}px`;
+              console.log('proof')
+            }
+            else {console.log('dddd')}
+
+            
             
 
 
